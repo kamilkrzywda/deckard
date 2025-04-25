@@ -1,0 +1,99 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+// Looking for ways to speed up your queries, or scale easily with your serverless or edge functions?
+// Try Prisma Accelerate: https://pris.ly/cli/accelerate-init
+
+generator client {
+  provider = "prisma-client-js"
+  output   = "../src/generated/prisma"
+}
+
+datasource db {
+  provider = "sqlite"
+  url      = "file:./AllPrintings.sqlite"
+}
+
+model Card {
+  uuid                    String   @id
+  name                    String
+  artist                  String?
+  artistIds               String? // Stored as comma-separated values
+  asciiName               String?
+  attractionLights        String?
+  availability            String? // Stored as comma-separated values
+  boosterTypes            String? // Stored as comma-separated values
+  borderColor             String?
+  cardParts               String? // Stored as comma-separated values
+  colorIdentity           String? // Stored as comma-separated values
+  colorIndicator          String? // Stored as comma-separated values
+  colors                  String? // Stored as comma-separated values
+  defense                 String?
+  duelDeck                String?
+  edhrecRank              Int?
+  edhrecSaltiness         Int?
+  faceConvertedManaCost   Float?
+  faceFlavorName          String?
+  faceManaValue           Float?
+  faceName                String?
+  finishes                String? // Stored as comma-separated values
+  flavorName              String?
+  flavorText              String?
+  frameEffects            String? // Stored as comma-separated values
+  frameVersion            String?
+  hand                    String?
+  hasAlternativeDeckLimit Boolean?
+  hasContentWarning       Boolean?
+  hasFoil                 Boolean?
+  hasNonFoil              Boolean?
+  isAlternative           Boolean?
+  isFullArt               Boolean?
+  isFunny                 Boolean?
+  isGameChanger           Boolean?
+  isOnlineOnly            Boolean?
+  isOversized             Boolean?
+  isPromo                 Boolean?
+  isRebalanced            Boolean?
+  isReprint               Boolean?
+  isReserved              Boolean?
+  isStarter               Boolean?
+  isStorySpotlight        Boolean?
+  isTextless              Boolean?
+  isTimeshifted           Boolean?
+  keywords                String? // Stored as comma-separated values
+  language                String?
+  layout                  String?
+  leadershipSkills        String? // Stored as comma-separated values
+  life                    String?
+  loyalty                 String?
+  manaCost                String?
+  manaValue               Float?
+  number                  String?
+  originalPrintings       String? // Stored as comma-separated values
+  originalReleaseDate     String?
+  originalText            String?
+  originalType            String?
+  otherFaceIds            String? // Stored as comma-separated values
+  power                   String?
+  printings               String? // Stored as comma-separated values
+  promoTypes              String? // Stored as comma-separated values
+  rarity                  String?
+  rebalancedPrintings     String? // Stored as comma-separated values
+  relatedCards            String?
+  securityStamp           String?
+  setCode                 String?
+  side                    String?
+  signature               String?
+  sourceProducts          String? // Stored as comma-separated values
+  subsets                 String? // Stored as comma-separated values
+  subtypes                String? // Stored as comma-separated values
+  supertypes              String? // Stored as comma-separated values
+  text                    String?
+  toughness               String?
+  type                    String?
+  types                   String? // Stored as comma-separated values
+  variations              String? // Stored as comma-separated values
+  watermark               String?
+
+  @@map("cards")
+}
